@@ -1,15 +1,15 @@
-import { ErrorCodes } from '../model';
+import { ErrorCodes, Options } from '../model';
 
 class Loader {
   baseLink: string;
-  options: { [key: string]: string | number };
-  constructor(baseLink: string, options: { [key: string]: string | number }) {
+  options: Options;
+  constructor(baseLink: string, options: Options) {
     this.baseLink = baseLink;
     this.options = options;
   }
 
   getResp<T>(
-    { endpoint, options = {} }: { endpoint: string; options?: { [key: string]: string | number } },
+    { endpoint, options = {} }: { endpoint: string; options?: Options },
     callback: (data: T) => void = () => {
       console.error('No callback for GET response');
     }
@@ -27,8 +27,8 @@ class Loader {
     return res;
   }
 
-  makeUrl(options: { [key: string]: string | number }, endpoint: string) {
-    const urlOptions: { [key: string]: string | number } = { ...this.options, ...options };
+  makeUrl(options: Options, endpoint: string) {
+    const urlOptions: Options = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
     Object.keys(urlOptions).forEach((key) => {
