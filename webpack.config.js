@@ -8,34 +8,35 @@ const baseConfig = {
   mode: 'development',
   module: {
     rules: [
-        {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
-        },
-        { 
-          test: /\.ts$/i, 
-          loader: 'ts-loader' 
-        },
-        {
-          test: /\.svg$/i,
-            loader: 'file-loader',
-        },
-      ],
-    },
-    resolve: {
-      extensions: ['.ts'],
-    },
-    output: {
-      filename: 'index.js',
-      path: path.resolve(__dirname, '../dist'),
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, './src/index.html'),
-        filename: 'index.html',
-      }),
-      new CleanWebpackPlugin(),
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.ts$/i,
+        loader: 'ts-loader',
+      },
+      {
+        test: /\.svg$/i,
+        loader: 'file-loader',
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.ts'],
+    modules: [path.resolve(__dirname, 'dist'), 'node_modules'],
+  },
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, '../dist'),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/index.html'),
+      filename: 'index.html',
+    }),
+    new CleanWebpackPlugin(),
+  ],
 };
 
 module.exports = ({ mode }) => {

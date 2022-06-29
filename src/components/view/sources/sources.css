@@ -29,9 +29,9 @@
   transform: translateY(-0.25em);
 }
 
-.sources__arrow:hover polygon,
-.sources__arrow:focus polygon {
-  fill: #3fcc59;
+.sources__arrow:hover span,
+.sources__arrow:focus span {
+  background: url('../../../assets/icons/triangle-icon-active.svg');
 }
 
 .source__item-name {
@@ -52,14 +52,15 @@
   overflow: hidden;
 }
 
-.sources__arrow img {
+.sources__arrow span {
+  background: url('../../../assets/icons/triangle-icon.svg');
   display: inline-block;
   width: 16px;
   height: 16px;
   align-self: center;
 }
 
-.left-arrow img {
+.left-arrow span {
   transform: rotate(180deg);
 }
 
