@@ -28,7 +28,7 @@ class News {
       (<HTMLElement>newsClone.querySelector('.news__description-title')).textContent = item.title;
       (<HTMLElement>newsClone.querySelector('.news__description-source')).textContent = item.source.name;
       (<HTMLElement>newsClone.querySelector('.news__description-content')).textContent = item.description;
-      (<HTMLElement>newsClone.querySelector('.news__read-more a')).setAttribute('href', item.url);
+      (<HTMLLinkElement>newsClone.querySelector('.news__read-more a')).setAttribute('href', item.url);
 
       fragment.append(newsClone);
     });
