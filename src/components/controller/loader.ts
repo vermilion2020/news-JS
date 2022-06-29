@@ -1,4 +1,4 @@
-import { IArticlesData, ISourcesData } from '../model';
+import { ErrorCodes } from '../model';
 
 class Loader {
   baseLink: string;
@@ -19,7 +19,7 @@ class Loader {
 
   async errorHandler(res: Response) {
     if (!res.ok) {
-      if (res.status === 401 || res.status === 404)
+      if (res.status === ErrorCodes.Unauthorized || res.status === ErrorCodes.NotFound)
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
       throw Error(res.statusText);
     }
