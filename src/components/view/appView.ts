@@ -14,15 +14,17 @@ export class AppView {
   drawNews(data: IArticlesData) {
     if (data.articles.length) {
       this.news.draw(data.articles);
+    } else {
+      this.news.showMessage('There are no news of selected source!');
     }
-    //TODO add empty array handling
   }
 
   drawSources(data: ISourcesData) {
     if (data.sources.length) {
       this.sources.draw(data.sources);
+    } else {
+      this.news.showMessage('There are no available sources!');
     }
-    //TODO add empty array handling
   }
 }
 

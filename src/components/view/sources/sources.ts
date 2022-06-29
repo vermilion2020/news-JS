@@ -3,7 +3,7 @@ import { ISource } from '../../model';
 
 class Sources {
   draw(data: [ISource]) {
-    const fragment = document.createDocumentFragment();
+    const fragment: DocumentFragment = document.createDocumentFragment();
     const sourceItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
     data.forEach((item) => {
@@ -16,6 +16,14 @@ class Sources {
     });
 
     (<HTMLElement>document.querySelector('.sources')).append(fragment);
+  }
+
+  showMessage(message: string) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('empty-message');
+    messageElement.textContent = message;
+    (<HTMLElement>document.querySelector('.sources')).innerHTML = '';
+    (<HTMLElement>document.querySelector('.sources')).appendChild(messageElement);
   }
 }
 

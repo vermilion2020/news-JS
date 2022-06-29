@@ -3,9 +3,9 @@ import { IArticle } from '../../model';
 
 class News {
   draw(data: [IArticle]) {
-    const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
+    const news: IArticle[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
-    const fragment = document.createDocumentFragment();
+    const fragment: DocumentFragment = document.createDocumentFragment();
     const newsItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
 
     news.forEach((item, idx) => {
@@ -35,6 +35,14 @@ class News {
 
     (<HTMLElement>document.querySelector('.news')).innerHTML = '';
     (<HTMLElement>document.querySelector('.news')).appendChild(fragment);
+  }
+
+  showMessage(message: string) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('empty-message');
+    messageElement.textContent = message;
+    (<HTMLElement>document.querySelector('.news')).innerHTML = '';
+    (<HTMLElement>document.querySelector('.news')).appendChild(messageElement);
   }
 }
 

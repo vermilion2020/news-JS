@@ -15,6 +15,16 @@ header h1 {
   font-weight: 800;
 }
 
+.empty-message {
+  font-size: 14px;
+  color: #30c5ff;
+  line-height: 1.4;
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  text-align: center;
+  margin: 1rem auto;
+}
+
 footer {
   height: 100px;
   display: flex;
