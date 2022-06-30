@@ -1,35 +1,67 @@
 body {
-    color: #fff;
-    background: #17181c;
-    font-family: sans-serif;
+  color: #fff;
+  background: #17181c;
+  font-family: sans-serif;
 }
 
 header {
-    padding: 10px 30px;
+  padding: 10px 30px;
+  width: 1200px;
+  margin: auto;
 }
 
 header h1 {
-    font-size: 40px;
-    font-weight: 800;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.empty-message {
+  font-size: 14px;
+  color: #30c5ff;
+  line-height: 1.4;
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  text-align: center;
+  margin: 1rem auto;
 }
 
 footer {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
 }
+
 footer .copyright a {
-    color: #444;
+  color: #444;
 }
+
 footer .copyright a:hover {
-    color: #555;
+  color: #555;
 }
+
 footer .copyright:before {
-    content: '©';
+  content: '©';
+}
+
+.rsschool {
+  background: url('./assets/icons/rs-school.svg');
+  background-size: cover;
+  width: 83px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.rsschool:hover,
+.rsschool:focus {
+  background: url('./assets/icons/rs-school-active.svg');
+  background-size: cover;
+  box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+  transform: translateY(-0.25em);
 }
