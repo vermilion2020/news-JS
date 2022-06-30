@@ -12,12 +12,22 @@ class App {
   }
 
   start() {
-    const sources: HTMLElement | null = document.querySelector('.sources');
+    const sources: HTMLElement = document.querySelector('.sources')!;
+    const leftArrow: HTMLElement = document.querySelector('.left-arrow')!;
+    const rightArrow: HTMLElement = document.querySelector('.right-arrow')!;
 
-    sources?.addEventListener('click', (e: MouseEvent) =>
+    sources.addEventListener('click', (e: MouseEvent) =>
       this.controller.getNews(e, (data: IArticlesData) => this.view.drawNews(data))
     );
     this.controller.getSources((data: ISourcesData) => this.view.drawSources(data));
+
+    leftArrow.addEventListener('click', () => {
+      this.controller.getSources((data: ISourcesData) => this.view.changeSourcesPage(data, -1));
+    });
+
+    rightArrow.addEventListener('click', () => {
+      this.controller.getSources((data: ISourcesData) => this.view.changeSourcesPage(data, 1));
+    });
   }
 }
 

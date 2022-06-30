@@ -9,6 +9,6 @@ export interface ISource {
 }
 
 export interface ISourcesData {
-  sources: [ISource];
+  sources: ISource[];
   status: string;
 }

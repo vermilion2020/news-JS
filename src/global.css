@@ -49,3 +49,19 @@ footer .copyright a:hover {
 footer .copyright:before {
   content: '©';
 }
+
+.rsschool {
+  background: url('./assets/icons/rs-school.svg');
+  background-size: cover;
+  width: 83px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.rsschool:hover,
+.rsschool:focus {
+  background: url('./assets/icons/rs-school-active.svg');
+  background-size: cover;
+  box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+  transform: translateY(-0.25em);
+}

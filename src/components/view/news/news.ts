@@ -2,7 +2,7 @@ import './news.css';
 import { IArticle } from '../../model';
 
 class News {
-  draw(data: [IArticle]) {
+  draw(data: IArticle[]) {
     const news: IArticle[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
     const fragment: DocumentFragment = document.createDocumentFragment();

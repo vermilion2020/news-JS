@@ -13,7 +13,7 @@ export interface IArticle {
 }
 
 export interface IArticlesData {
-  articles: [IArticle];
+  articles: IArticle[];
   status: string;
   totalResults: number;
 }
